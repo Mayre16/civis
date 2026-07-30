@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { assetUrl } from "@/lib/asset-url";
+import { cmsFaviconUrl } from "@/lib/cms-favicon-url";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { CivisSiteChrome } from "@/components/CivisSiteChrome";
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "es_DO",
     type: "website",
   },
-  icons: { icon: [{ url: assetUrl("/brand/icon-na.webp"), type: "image/webp" }] },
+  icons: { icon: [{ url: cmsFaviconUrl("civis"), type: "image/webp" }] },
   ...(gscVerification
     ? { verification: { google: gscVerification } }
     : undefined),
