@@ -163,7 +163,7 @@ export function CivisDondeEstamosSection() {
   return (
     <section
       id="donde-estamos"
-      className="scroll-mt-28 border-b border-na-civis/10 bg-gradient-to-br from-na-civis/[0.05] via-white to-white py-14 sm:py-16"
+      className="scroll-mt-28 border-b border-na-civis/10 bg-white py-14 sm:py-16"
       aria-labelledby="civis-donde-title"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
