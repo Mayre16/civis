@@ -119,10 +119,10 @@ export const DEFAULT_CIVIS_SALONES_PAGE: CmsCivisSalonesPage = {
   eyebrow: "Espacios",
   title: "¿Necesitas un espacio para tus talleres o reuniones?",
   lede:
-    "Además de impartir formación in company, ponemos a disposición salones sobrios y elegantes en nuestras sedes de Santo Domingo — ideales para talleres, cursos, charlas y reuniones de equipo que usted organice.",
-  catalogTitle: "Catálogo de salones",
+    "Además de impartir formación in company, ponemos a disposición salones sobrios y elegantes en nuestras sedes — ideales para talleres, cursos, charlas y reuniones de equipo.",
+  catalogTitle: "Salones en alquiler",
   catalogIntro:
-    "Capacidades por disposición: butacas, mesas tipo escuela o herradura.",
+    "Galería de espacios con aforo máximo. Capacidades por disposición: butacas, mesas tipo escuela o herradura.",
 };
 
 export function resolveCivisSalonesPage(

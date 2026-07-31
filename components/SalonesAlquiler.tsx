@@ -21,6 +21,8 @@ type SalonesAlquilerProps = {
   id?: string;
   variant?: "principal" | "civis";
   embedded?: boolean;
+  /** Galería compacta: foto, nombre y aforo (página /salones). */
+  gallery?: boolean;
 };
 
 const VARIANT = {
@@ -45,6 +47,11 @@ const VARIANT = {
     sede: "text-na-civisDark",
   },
 } as const;
+
+function maxCapacity(salon: Salon): number {
+  const { butacas, mesas, herradura } = salon.capacities;
+  return Math.max(butacas, mesas, herradura);
+}
 
 function CapacityRow({
   layout,
@@ -74,6 +81,60 @@ function CapacityRow({
         {featured ? <span className="sr-only"> (vista en foto)</span> : null}
       </span>
     </li>
+  );
+}
+
+function SalonGalleryCard({
+  salon,
+  styles,
+  onEdit,
+}: {
+  salon: Salon;
+  styles: (typeof VARIANT)[keyof typeof VARIANT];
+  onEdit?: () => void;
+}) {
+  const imageSrc = resolveCmsMediaUrl(salon.image.src) ?? salon.image.src;
+  const aforo = maxCapacity(salon);
+
+  return (
+    <article
+      className={`relative flex flex-col overflow-hidden rounded-2xl border ${styles.card}`}
+    >
+      {onEdit ? (
+        <button
+          type="button"
+          onClick={onEdit}
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-amber-500 text-white shadow"
+          aria-label={`Editar ${salon.name}`}
+        >
+          <Pencil className="h-4 w-4" />
+        </button>
+      ) : null}
+      <div className="relative aspect-[16/10] w-full bg-black/5">
+        <Image
+          src={imageSrc}
+          alt={salon.image.alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 33vw"
+          unoptimized
+        />
+      </div>
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        <h4 className="text-lg font-black text-na-ink">{salon.name}</h4>
+        <p
+          className={`inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold ${styles.badge}`}
+        >
+          <UsersRound className={`h-4 w-4 ${styles.icon}`} aria-hidden />
+          Hasta {aforo} personas
+        </p>
+        <p className="text-xs text-na-muted">
+          {LAYOUT_LABELS.butacas} {salon.capacities.butacas} ·{" "}
+          {LAYOUT_LABELS.mesas} {salon.capacities.mesas} ·{" "}
+          {LAYOUT_LABELS.herradura} {salon.capacities.herradura}
+        </p>
+      </div>
+    </article>
   );
 }
 
@@ -148,6 +209,7 @@ export function SalonesAlquiler({
   id = "salones",
   variant = "civis",
   embedded = false,
+  gallery = false,
 }: SalonesAlquilerProps) {
   const styles = VARIANT[variant];
   const edit = useSalonesCmsEdit();
@@ -159,51 +221,46 @@ export function SalonesAlquiler({
 
   const inner = (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
-      {!embedded ? (
-        <div className="relative">
-          {edit?.ready ? (
-            <button
-              type="button"
-              onClick={() => edit.setSelectedId("__section__")}
-              className="absolute right-0 top-0 inline-flex items-center gap-1.5 rounded-full border border-amber-400 bg-amber-50 px-3 py-1.5 text-[11px] font-bold uppercase text-amber-950"
-            >
-              <Pencil className="h-3.5 w-3.5" />
-              Editar textos
-            </button>
-          ) : null}
-          <p className={`text-xs font-bold uppercase tracking-[0.32em] ${styles.eyebrow}`}>
-            {pageCopy.eyebrow}
-          </p>
-          <h2 className={`mt-3 text-balance text-3xl font-black sm:text-4xl ${styles.title}`}>
-            {pageCopy.title}
-          </h2>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-na-muted sm:text-base">
-            {pageCopy.lede}
-          </p>
-        </div>
-      ) : (
-        <div className="relative">
-          {edit?.ready ? (
-            <button
-              type="button"
-              onClick={() => edit.setSelectedId("__section__")}
-              className="absolute right-0 top-0 inline-flex items-center gap-1.5 rounded-full border border-amber-400 bg-amber-50 px-3 py-1.5 text-[11px] font-bold uppercase text-amber-950"
-            >
-              <Pencil className="h-3.5 w-3.5" />
-              Editar textos
-            </button>
-          ) : null}
-          <h3 className={`text-2xl font-black sm:text-3xl ${styles.title}`}>
-            {pageCopy.catalogTitle}
-          </h3>
-          <p className="mt-3 max-w-3xl text-sm text-na-muted sm:text-base">
-            {pageCopy.catalogIntro}
-          </p>
-        </div>
-      )}
+      <div className="relative">
+        {edit?.ready ? (
+          <button
+            type="button"
+            onClick={() => edit.setSelectedId("__section__")}
+            className="absolute right-0 top-0 inline-flex items-center gap-1.5 rounded-full border border-amber-400 bg-amber-50 px-3 py-1.5 text-[11px] font-bold uppercase text-amber-950"
+          >
+            <Pencil className="h-3.5 w-3.5" />
+            Editar textos
+          </button>
+        ) : null}
+        {gallery || embedded ? (
+          <>
+            <p className={`text-xs font-bold uppercase tracking-[0.32em] ${styles.eyebrow}`}>
+              Alquiler de espacios
+            </p>
+            <h2 className={`mt-3 text-balance text-3xl font-black sm:text-4xl ${styles.title}`}>
+              {pageCopy.catalogTitle}
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm text-na-muted sm:text-base">
+              {pageCopy.catalogIntro}
+            </p>
+          </>
+        ) : (
+          <>
+            <p className={`text-xs font-bold uppercase tracking-[0.32em] ${styles.eyebrow}`}>
+              {pageCopy.eyebrow}
+            </p>
+            <h2 className={`mt-3 text-balance text-3xl font-black sm:text-4xl ${styles.title}`}>
+              {pageCopy.title}
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-na-muted sm:text-base">
+              {pageCopy.lede}
+            </p>
+          </>
+        )}
+      </div>
 
       {groups.map((group) => (
-        <div key={group.sede} className={embedded ? "mt-10" : "mt-12"}>
+        <div key={group.sede} className="mt-10 sm:mt-12">
           <div className={`flex items-center gap-2 ${styles.sede}`}>
             <MapPin className="h-4 w-4" aria-hidden />
             <h3 className="text-lg font-black">Sede {group.sede}</h3>
@@ -217,15 +274,27 @@ export function SalonesAlquiler({
           >
             {group.salones.map((salon) => (
               <li key={salon.id}>
-                <SalonCard
-                  salon={salon}
-                  styles={styles}
-                  onEdit={
-                    edit?.ready
-                      ? () => edit.setSelectedId(salon.id)
-                      : undefined
-                  }
-                />
+                {gallery ? (
+                  <SalonGalleryCard
+                    salon={salon}
+                    styles={styles}
+                    onEdit={
+                      edit?.ready
+                        ? () => edit.setSelectedId(salon.id)
+                        : undefined
+                    }
+                  />
+                ) : (
+                  <SalonCard
+                    salon={salon}
+                    styles={styles}
+                    onEdit={
+                      edit?.ready
+                        ? () => edit.setSelectedId(salon.id)
+                        : undefined
+                    }
+                  />
+                )}
               </li>
             ))}
           </ul>
@@ -236,7 +305,7 @@ export function SalonesAlquiler({
         {variant === "civis" ? (
           <Link
             href={CIVIS_FORM_HREF}
-            className={`inline-flex rounded-full px-6 py-3 text-sm font-bold shadow-md transition ${styles.cta}`}
+            className={`inline-flex min-h-11 items-center rounded-full px-6 py-3 text-sm font-bold shadow-md transition ${styles.cta}`}
           >
             Solicitar propuesta con salón
           </Link>
@@ -245,7 +314,7 @@ export function SalonesAlquiler({
             href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex rounded-full px-6 py-3 text-sm font-bold shadow-md transition ${styles.cta}`}
+            className={`inline-flex min-h-11 items-center rounded-full px-6 py-3 text-sm font-bold shadow-md transition ${styles.cta}`}
           >
             Consultar disponibilidad y tarifas
           </a>
@@ -254,11 +323,11 @@ export function SalonesAlquiler({
     </div>
   );
 
-  if (embedded) {
+  if (embedded || gallery) {
     return (
       <div
         id={id}
-        className={`py-14 sm:py-16 ${variant === "civis" ? "scroll-mt-28 border-b border-na-civis/10 bg-na-surface" : ""}`}
+        className={`py-14 sm:py-16 ${variant === "civis" ? "scroll-mt-28 bg-na-surface" : ""}`}
       >
         {inner}
       </div>

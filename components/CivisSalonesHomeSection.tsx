@@ -89,7 +89,7 @@ export function CivisSalonesHomeSection() {
             className="inline-flex items-center gap-2 rounded-full bg-na-civis px-6 py-3 text-sm font-bold text-white shadow-md shadow-na-civis/25 transition hover:bg-na-civisDark"
           >
             <Building2 className="h-4 w-4" aria-hidden />
-            Ver todos los salones
+            Ver ubicación y salones
           </Link>
           <Link
             href="/inscribete"

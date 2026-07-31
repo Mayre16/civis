@@ -262,7 +262,7 @@ export const CIVIS_HEADER_NAV: CivisNavItem[] = [
     id: "clientes",
   },
   { href: "/talleres", label: "Talleres", id: "talleres" },
-  { href: "/salones", label: "Salones", id: "salones" },
+  { href: "/salones", label: "Dónde estamos", id: "salones" },
   { href: "/inscribete", label: "Inscríbete", id: "inscribete" },
 ];
 
@@ -276,7 +276,7 @@ export const CIVIS_FOOTER_NAV: CivisNavItem[] = [
     label: "Clientes & Aliados",
     id: "clientes",
   },
-  { href: "/salones", label: "Salones", id: "salones" },
+  { href: "/salones", label: "Dónde estamos", id: "salones" },
   { href: "/inscribete", label: "Inscríbete", id: "inscribete" },
 ];
 
