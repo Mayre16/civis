@@ -63,7 +63,7 @@ export const COTIZACION_EMAIL =
   process.env.NEXT_PUBLIC_COTIZACION_EMAIL?.trim() || "civis@acropolis.org";
 
 export const LEGAL_DOMICILE =
-  "Eugenio Deschamps No. 61, Los Prados, Santo Domingo";
+  "C. Cub Scouts 6, Ens. Naco, Santo Domingo, República Dominicana";
 
 export const DIPLOMADO_WHATSAPP_NUMBER = "18493527054";
 export const DIPLOMADO_WHATSAPP_URL = `https://wa.me/${DIPLOMADO_WHATSAPP_NUMBER}`;

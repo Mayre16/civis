@@ -25,48 +25,28 @@ export type CivisDondeContact = {
 /** Horario orientativo de atención / formación en sede. */
 export const CIVIS_SEDE_HOURS = "Lunes a Jueves · 6:45 p.m. – 8:45 p.m.";
 
-const SEDE_OVERRIDES: Record<
-  string,
-  { sala?: string; note?: string; hours?: string }
-> = {
-  "sede-los-prados": {
-    sala: "Civis Consulting · salones Sócrates y Platón",
-    note: "Aquí recibimos a empresas y equipos: formación Civis y alquiler de salones para talleres, cursos y reuniones.",
-  },
-  "sede-naco": {
-    sala: "Espacio Nueva Acrópolis",
-    note: "Sede institucional. Consulta disponibilidad de espacios y actividades.",
-  },
-  "sede-santiago": {
-    note: "Punto de Nueva Acrópolis en Santiago. Consulta disponibilidad.",
-  },
+const CIVIS_SEDE_ID = "sede-naco";
+
+const NACO_OVERRIDE = {
+  sala: "Civis Consulting",
+  note: "Aquí recibimos a empresas y equipos: formación Civis y alquiler de salones para talleres, cursos y reuniones.",
 };
 
-const DEFAULT_NOTE =
-  "Sede de Nueva Acrópolis. Civis Consulting ofrece formación y alquiler de salones en Los Prados.";
-
-/** Sedes del sitio principal (build-time sync). Los Prados primero (sede Civis). */
-export const CIVIS_SEDES: CivisSede[] = [...PRINCIPAL_SEDES]
-  .sort((a, b) => {
-    if (a.id === "sede-los-prados") return -1;
-    if (b.id === "sede-los-prados") return 1;
-    return 0;
-  })
-  .map((s) => {
-    const o = SEDE_OVERRIDES[s.id] ?? {};
-    return {
-      id: s.id,
-      name: s.name,
-      zone: s.zone,
-      city: s.city,
-      address: s.address,
-      reference: s.reference,
-      mapsQuery: s.mapsQuery,
-      hours: o.hours ?? CIVIS_SEDE_HOURS,
-      sala: o.sala,
-      note: o.note ?? DEFAULT_NOTE,
-    };
-  });
+/** Solo Naco — ubicación pública de Civis Consulting (sync desde principal). */
+export const CIVIS_SEDES: CivisSede[] = PRINCIPAL_SEDES.filter(
+  (s) => s.id === CIVIS_SEDE_ID,
+).map((s) => ({
+  id: s.id,
+  name: s.name,
+  zone: s.zone,
+  city: s.city,
+  address: s.address,
+  reference: s.reference,
+  mapsQuery: s.mapsQuery,
+  hours: CIVIS_SEDE_HOURS,
+  sala: NACO_OVERRIDE.sala,
+  note: NACO_OVERRIDE.note,
+}));
 
 export const CIVIS_DONDE_CONTACT: CivisDondeContact = {
   phone: "(849) 517-4144",
@@ -74,7 +54,7 @@ export const CIVIS_DONDE_CONTACT: CivisDondeContact = {
   whatsappNumber: WHATSAPP_NUMBER,
   whatsappCtaLabel: "Escribir por WhatsApp",
   whatsappMessage:
-    "Hola, me interesa visitar Civis Consulting / Nueva Acrópolis en {sede}.",
+    "Hola, me interesa visitar Civis Consulting en la Sede Naco.",
 };
 
 function isGoogleMapsUrl(input: string): boolean {

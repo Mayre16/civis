@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import {
   Clock,
   ExternalLink,
@@ -144,12 +144,9 @@ function SedePanel({ sede }: { sede: CivisSede }) {
   );
 }
 
-/** Ubicación de Civis / Nueva Acrópolis (mapa + datos), estilo Editorial. */
+/** Ubicación de Civis en Naco (mapa + datos), estilo Editorial. */
 export function CivisDondeEstamosSection() {
-  const sedes = CIVIS_SEDES;
-  const [tab, setTab] = useState(sedes[0]?.id ?? "sede-los-prados");
-  const sede = sedes.find((s) => s.id === tab) ?? sedes[0];
-
+  const sede = CIVIS_SEDES[0];
   if (!sede) return null;
 
   return (
@@ -166,49 +163,14 @@ export function CivisDondeEstamosSection() {
           id="civis-donde-title"
           className="mt-3 text-balance text-3xl font-black text-na-ink sm:text-4xl"
         >
-          Visítanos
+          Visítanos en Naco
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-na-muted sm:text-base">
-          Civis Consulting opera en las sedes de Nueva Acrópolis. En Los Prados
-          encuentras nuestra formación para empresas y los salones en alquiler.
+          Civis Consulting está en la Sede Naco de Nueva Acrópolis: formación
+          para empresas y alquiler de salones.
         </p>
 
-        {sedes.length > 1 ? (
-          <div
-            className="mt-8 inline-flex flex-wrap gap-2 rounded-2xl border border-na-civis/15 bg-white p-1.5 shadow-na-soft"
-            role="tablist"
-            aria-label="Sedes Civis / Nueva Acrópolis"
-          >
-            {sedes.map((item) => {
-              const active = tab === item.id;
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={active}
-                  aria-controls={`civis-sede-panel-${item.id}`}
-                  id={`civis-sede-tab-${item.id}`}
-                  onClick={() => setTab(item.id)}
-                  className={`min-h-11 rounded-xl px-4 py-3 text-sm font-bold transition ${
-                    active
-                      ? "bg-na-civis text-white shadow-md shadow-na-civis/20"
-                      : "text-na-muted hover:bg-na-civis/5 hover:text-na-ink"
-                  }`}
-                >
-                  {item.name}
-                </button>
-              );
-            })}
-          </div>
-        ) : null}
-
-        <div
-          id={`civis-sede-panel-${sede.id}`}
-          role="tabpanel"
-          aria-labelledby={`civis-sede-tab-${sede.id}`}
-          className="mt-8"
-        >
+        <div className="mt-8">
           <SedePanel sede={sede} />
         </div>
       </div>
