@@ -49,10 +49,16 @@ function LazyMapEmbed({ sede }: { sede: CivisSede }) {
         <iframe
           title={`Mapa — ${sede.name}`}
           src={civisMapsEmbedUrl(
-            sede.mapsQuery,
-            [sede.address, sede.zone, sede.city, "República Dominicana"]
-              .filter(Boolean)
-              .join(", "),
+            sede.mapsEmbedQuery ?? sede.mapsQuery,
+            sede.mapsEmbedQuery ??
+              [
+                "Calle Cub Scouts No. 6",
+                sede.zone,
+                sede.city,
+                "República Dominicana",
+              ]
+                .filter(Boolean)
+                .join(", "),
           )}
           className="aspect-[4/3] min-h-[280px] w-full border-0 lg:min-h-[360px]"
           loading="lazy"
@@ -168,7 +174,7 @@ export function CivisDondeEstamosSection() {
           id="civis-donde-title"
           className="mt-3 text-balance text-3xl font-black text-na-ink sm:text-4xl lg:text-5xl"
         >
-          Visítanos en Naco
+          Visítanos
         </h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-na-muted sm:text-base">
           Civis Consulting está en la Sede Naco de Nueva Acrópolis: formación

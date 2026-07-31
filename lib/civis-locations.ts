@@ -9,6 +9,8 @@ export type CivisSede = {
   address: string;
   reference?: string;
   mapsQuery: string;
+  /** Texto/coords solo para el iframe (si mapsQuery es un enlace corto). */
+  mapsEmbedQuery?: string;
   hours: string;
   note: string;
   sala?: string;
@@ -22,14 +24,21 @@ export type CivisDondeContact = {
   whatsappMessage: string;
 };
 
-/** Horario orientativo de atención / formación en sede. */
-export const CIVIS_SEDE_HOURS = "Lunes a Jueves · 6:45 p.m. – 8:45 p.m.";
+/** Horario de visita Civis Consulting. */
+export const CIVIS_SEDE_HOURS = "Lunes a viernes · 9:00 a.m. – 6:00 p.m.";
 
 const CIVIS_SEDE_ID = "sede-naco";
+
+/** Búsqueda estable para el iframe (los goo.gl no se pueden embeber ni geocodifican bien). */
+const NACO_MAP_EMBED_QUERY =
+  "Calle Cub Scouts No. 6, Ensanche Naco, Santo Domingo, República Dominicana";
 
 const NACO_OVERRIDE = {
   sala: "Civis Consulting",
   note: "Aquí recibimos a empresas y equipos: formación Civis y alquiler de salones para talleres, cursos y reuniones.",
+  hours: CIVIS_SEDE_HOURS,
+  /** Preferir texto de búsqueda en el embed; el enlace corto sigue en «Abrir en Maps». */
+  mapsEmbedQuery: NACO_MAP_EMBED_QUERY,
 };
 
 /** Solo Naco — ubicación pública de Civis Consulting (sync desde principal). */
@@ -43,9 +52,10 @@ export const CIVIS_SEDES: CivisSede[] = PRINCIPAL_SEDES.filter(
   address: s.address,
   reference: s.reference,
   mapsQuery: s.mapsQuery,
-  hours: CIVIS_SEDE_HOURS,
+  hours: NACO_OVERRIDE.hours,
   sala: NACO_OVERRIDE.sala,
   note: NACO_OVERRIDE.note,
+  mapsEmbedQuery: NACO_OVERRIDE.mapsEmbedQuery,
 }));
 
 export const CIVIS_DONDE_CONTACT: CivisDondeContact = {
@@ -102,7 +112,7 @@ export function civisMapsEmbedUrl(query: string, fallbackSearch?: string): strin
     const q = (fallbackSearch ?? t).trim();
     return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&hl=es&z=16&output=embed`;
   }
-  return `https://maps.google.com/maps?q=${encodeURIComponent(t)}&hl=es&z=16&output=embed`;
+  return `https://maps.google.com/maps?q=${encodeURIComponent(t)}&hl=es&z=17&output=embed`;
 }
 
 export function civisTelHref(phone: string): string {

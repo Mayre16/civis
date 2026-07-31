@@ -37,11 +37,11 @@ const VARIANT = {
     sede: "text-na-kefer",
   },
   civis: {
-    section: "border-t border-na-civis/10 bg-na-civis/[0.04]",
-    eyebrow: "text-na-civisDark",
-    title: "text-na-ink",
-    card: "border-na-civis/15 bg-na-surface shadow-na-soft",
-    badge: "bg-na-civis/10 text-na-civisDark",
+    section: "border-t border-na-civis/15 bg-white",
+    eyebrow: "text-na-civis",
+    title: "text-na-civisDark",
+    card: "border-na-civis/20 bg-white shadow-na-soft ring-1 ring-na-civis/10",
+    badge: "bg-na-civis/15 text-na-civisDark",
     icon: "text-na-civis",
     cta: "bg-na-civis text-white shadow-na-civis/25 hover:bg-na-civisDark",
     sede: "text-na-civisDark",
@@ -327,7 +327,11 @@ export function SalonesAlquiler({
     return (
       <div
         id={id}
-        className={`py-14 sm:py-16 ${variant === "civis" ? "scroll-mt-28 bg-na-surface" : ""}`}
+        className={`py-14 sm:py-16 ${
+          variant === "civis"
+            ? "scroll-mt-28 border-t border-na-civis/15 bg-gradient-to-b from-na-civis/[0.07] via-white to-white"
+            : ""
+        }`}
       >
         {inner}
       </div>
