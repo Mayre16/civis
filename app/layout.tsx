@@ -71,15 +71,16 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalytics />
           <SiteAnalytics site="civis" />
+        </Suspense>
+        <Suspense fallback={null}>
           <CmsEditModeBootstrap />
         </Suspense>
         <CmsProvider>
-          <Suspense fallback={null}>
-            <CivisCmsEditProvider>
-              <CivisSiteChrome>{children}</CivisSiteChrome>
-              <CivisFooter />
-            </CivisCmsEditProvider>
-          </Suspense>
+          {/* Sin Suspense alrededor del contenido: evita CSR bailout y LCP alto en móvil. */}
+          <CivisCmsEditProvider>
+            <CivisSiteChrome>{children}</CivisSiteChrome>
+            <CivisFooter />
+          </CivisCmsEditProvider>
         </CmsProvider>
       </body>
     </html>

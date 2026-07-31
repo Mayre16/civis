@@ -11,6 +11,7 @@ import {
   persistCmsEditMode,
   readStoredCmsEditMode,
 } from "@/lib/cms/edit-mode";
+import { notifyCmsEditModeChanged } from "@/hooks/useCmsEditMode";
 
 /**
  * Mantiene el modo edición al navegar por Civis dentro del iframe del editor.
@@ -39,11 +40,13 @@ export function CmsEditModeBootstrap() {
   useEffect(() => {
     if (param) {
       persistCmsEditMode(param);
+      notifyCmsEditModeChanged();
       return;
     }
     if (!isInEditorIframe()) {
       sessionStorage.removeItem(CMS_EDIT_STORAGE_KEY);
     }
+    notifyCmsEditModeChanged();
   }, [param]);
 
   useEffect(() => {

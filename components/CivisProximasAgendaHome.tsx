@@ -35,34 +35,34 @@ function AgendaCarouselMeta({ act }: { act: ProximaActividad }) {
   ] as const;
 
   return (
-    <dl className="mt-3 grid min-h-[4.75rem] shrink-0 grid-cols-1 gap-y-2 text-sm text-na-muted sm:grid-cols-2">
-      {rows.map(({ icon: Icon, label, value }) => (
-        <div
-          key={label}
-          className={cn(
-            "inline-flex min-h-[1.375rem] items-center gap-1.5",
-            label === "Sede" && "sm:col-span-2",
-            !value && "invisible",
-          )}
-          aria-hidden={!value}
-        >
-          <Icon className="h-4 w-4 shrink-0 text-na-civis" aria-hidden />
-          <dt className="sr-only">{label}</dt>
-          <dd
+    <div className="mt-3 shrink-0">
+      <dl className="grid min-h-[4.75rem] grid-cols-1 gap-y-2 text-sm text-na-muted sm:grid-cols-2">
+        {rows.map(({ icon: Icon, label, value }) => (
+          <div
+            key={label}
             className={cn(
-              label === "Fecha" && "font-semibold text-na-civisDark",
+              "inline-flex min-h-[1.375rem] items-center gap-1.5",
+              label === "Sede" && "sm:col-span-2",
+              !value && "invisible",
             )}
+            aria-hidden={!value}
           >
-            {value || "—"}
-          </dd>
-        </div>
-      ))}
+            <Icon className="h-4 w-4 shrink-0 text-na-civis" aria-hidden />
+            <dt className="sr-only">{label}</dt>
+            <dd
+              className={cn(
+                label === "Fecha" && "font-semibold text-na-civisDark",
+              )}
+            >
+              {value || "—"}
+            </dd>
+          </div>
+        ))}
+      </dl>
       {act.format ? (
-        <div className="sm:col-span-2 text-sm font-medium text-na-muted">
-          {act.format}
-        </div>
+        <p className="mt-2 text-sm font-medium text-na-muted">{act.format}</p>
       ) : null}
-    </dl>
+    </div>
   );
 }
 
