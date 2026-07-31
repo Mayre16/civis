@@ -2,7 +2,7 @@
 
 import { CivisHero } from "@/components/CivisHero";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { useCivisHeroText, useCivisHeroCarouselImages } from "@/lib/cms/hooks";
 
 type Props = {

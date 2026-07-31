@@ -110,7 +110,7 @@ export function civisMapsEmbedUrl(query: string, fallbackSearch?: string): strin
   // Enlaces cortos (maps.app.goo.gl) no se pueden embeber: usar dirección/texto.
   if (/maps\.app\.goo\.gl|goo\.gl\/maps|share\.google\//i.test(t)) {
     const q = (fallbackSearch ?? t).trim();
-    return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&hl=es&z=16&output=embed`;
+    return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&hl=es&z=17&output=embed`;
   }
   return `https://maps.google.com/maps?q=${encodeURIComponent(t)}&hl=es&z=17&output=embed`;
 }

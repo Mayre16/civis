@@ -1,6 +1,6 @@
 /** Salones disponibles para alquiler — talleres, cursos y eventos. */
 
-import acropolisPublished from "../data/acropolis/published.json";
+import salonesSeed from "./salones-seed.json";
 
 export type LayoutKind = "butacas" | "mesas" | "herradura";
 
@@ -32,26 +32,7 @@ export const LAYOUT_LABELS: Record<LayoutKind, string> = {
   herradura: "Disposición herradura",
 };
 
-function salonCityFromPublished(city?: string): SalonCity {
-  return city === "Santiago" ? "Santiago" : "Santo Domingo";
-}
-
-/** Fallback alineado con `principal/data/acropolis/published.json` (misma fuente que Acrópolis). */
-function salonesFromAcropolisPublished(): Salon[] {
-  const items = acropolisPublished.sections?.salones ?? [];
-  return items.map((s) => ({
-    id: s.id,
-    name: s.name,
-    sede: s.sede as SalonSede,
-    city: salonCityFromPublished(s.city),
-    summary: s.summary,
-    featuredLayout: s.featuredLayout as LayoutKind,
-    capacities: { ...s.capacities },
-    image: { src: s.image.src, alt: s.image.alt },
-  }));
-}
-
-export const SALONES: Salon[] = salonesFromAcropolisPublished();
+export const SALONES: Salon[] = salonesSeed as Salon[];
 
 export const SALONES_BY_SEDE = SALON_SEDES.map((sede) => ({
   sede,

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { CivisMediaImage } from "@/components/cms/CivisMediaImage";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { OfertaFormativaItem } from "@/components/OfertaFormativaItem";
 import {
   ActividadModal,

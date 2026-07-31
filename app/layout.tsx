@@ -1,14 +1,11 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { cmsFaviconUrl } from "@/lib/cms-favicon-url";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { CivisSiteChrome } from "@/components/CivisSiteChrome";
 import { CivisFooter } from "@/components/CivisFooter";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-import { SiteAnalytics } from "@/components/SiteAnalytics";
-import { CmsEditModeBootstrap } from "@/components/cms/CmsEditModeBootstrap";
-import { CivisCmsEditProvider } from "@/components/cms/CivisCmsEditContext";
+import { DeferredSiteScripts } from "@/components/DeferredSiteScripts";
+import { CivisCmsEditGate } from "@/components/cms/CivisCmsEditGate";
 import { CmsProvider } from "@/lib/cms/provider";
 import { SITE_URL } from "@/lib/site-config";
 
@@ -68,19 +65,13 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} flex min-h-screen flex-col font-sans antialiased text-na-ink`}
       >
-        <Suspense fallback={null}>
-          <GoogleAnalytics />
-          <SiteAnalytics site="civis" />
-        </Suspense>
-        <Suspense fallback={null}>
-          <CmsEditModeBootstrap />
-        </Suspense>
+        <DeferredSiteScripts />
         <CmsProvider>
           {/* Sin Suspense alrededor del contenido: evita CSR bailout y LCP alto en móvil. */}
-          <CivisCmsEditProvider>
+          <CivisCmsEditGate>
             <CivisSiteChrome>{children}</CivisSiteChrome>
             <CivisFooter />
-          </CivisCmsEditProvider>
+          </CivisCmsEditGate>
         </CmsProvider>
       </body>
     </html>

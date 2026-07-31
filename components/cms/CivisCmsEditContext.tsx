@@ -1,9 +1,7 @@
 "use client";
 
 import {
-  createContext,
   useCallback,
-  useContext,
   useEffect,
   useState,
   type ReactNode,
@@ -18,6 +16,7 @@ import {
   fetchCmsDraft,
   publishCms,
   saveCmsDraft,
+  resolveCmsMediaUrl,
 } from "@/lib/cms/api-client";
 import { registerCmsEditInit } from "@/lib/cms/edit-session";
 import {
@@ -55,7 +54,6 @@ import {
   newCivisHeroSlideId,
   type CmsHeroCarouselItem,
 } from "@/lib/cms/hero-carousel-edit";
-import { resolveCmsMediaUrl } from "@/lib/cms/api-client";
 import {
   EditField,
   EditPanelChrome,
@@ -63,10 +61,20 @@ import {
   ImageField,
   SectionCopyFields,
 } from "@/components/cms/CmsEditFields";
+import {
+  CivisCmsEditContext,
+  type CivisCmsEditContextValue,
+  useCivisCmsEdit,
+} from "@/components/cms/CivisCmsEditHooks";
 import { useCmsEditMode } from "@/hooks/useCmsEditMode";
 import { matchesAppPath } from "@/lib/cms/edit-mode";
 import { usePathname } from "next/navigation";
 import { useCmsHydrated } from "@/lib/cms/hydration";
+
+export type { CivisCmsEditContextValue };
+export { useCivisCmsEdit };
+
+type EditableState = ReturnType<typeof loadEditableDoc>;
 
 const LINEA_IDS = ["etica", "convivencia", "conflicto", "claridad-mental"];
 
@@ -86,65 +94,6 @@ function bootstrapEditableState(): EditableState {
     TALLERES_REALIZADOS,
     PROXIMAS_ACTIVIDADES,
   );
-}
-
-type EditableState = ReturnType<typeof loadEditableDoc>;
-
-type CivisCmsEditContextValue = {
-  ready: boolean;
-  homeHero: EditableState["homeHero"];
-  heroCarousel: CmsHeroCarouselItem[];
-  homePage: CmsCivisHomePage;
-  talleresPage: CmsCivisTalleresPage;
-  quienesPage: CmsCivisQuienesPage;
-  oferta: CmsCivisTaller[];
-  entrenadores: CmsCivisEntrenador[];
-  clientes: CmsCivisCliente[];
-  talleresRealizados: CmsCivisTallerRealizado[];
-  proximas: CmsCivisProximaActividad[];
-  selectedId: string | null;
-  setSelectedId: (id: string | null) => void;
-  patchHomeHero: (patch: EditableState["homeHero"]) => void;
-  patchHeroSlide: (id: string, patch: Partial<CmsHeroCarouselItem>) => void;
-  addHeroSlide: () => void;
-  removeHeroSlide: (id: string) => void;
-  patchHomePage: (patch: Partial<CmsCivisHomePage>) => void;
-  patchHomePrincipios: (patch: Partial<CmsCivisHomePrincipios>) => void;
-  patchTalleresPage: (patch: Partial<CmsCivisTalleresPage>) => void;
-  patchQuienesPage: (patch: Partial<CmsCivisQuienesPage>) => void;
-  patchQuienesCivis: (patch: Partial<CmsCivisQuienesCivis>) => void;
-  patchQuienesNa: (patch: Partial<CmsCivisQuienesNa>) => void;
-  patchOferta: (id: string, patch: Partial<CmsCivisTaller>) => void;
-  patchEntrenador: (id: string, patch: Partial<CmsCivisEntrenador>) => void;
-  patchCliente: (id: string, patch: Partial<CmsCivisCliente>) => void;
-  patchTallerRealizado: (
-    id: string,
-    patch: Partial<CmsCivisTallerRealizado>,
-  ) => void;
-  patchProxima: (id: string, patch: Partial<CmsCivisProximaActividad>) => void;
-  addTallerRealizado: () => void;
-  addProxima: () => void;
-  addCliente: () => void;
-  addEntrenador: () => void;
-  addOferta: () => void;
-  removeTallerRealizado: (id: string) => void;
-  removeProxima: (id: string) => void;
-  removeCliente: (id: string) => void;
-  removeEntrenador: (id: string) => void;
-  removeOferta: (id: string) => void;
-  saveDraft: () => Promise<void>;
-  publish: () => Promise<void>;
-  dirty: boolean;
-  busy: boolean;
-  token: string | null;
-};
-
-const CivisCmsEditContext = createContext<CivisCmsEditContextValue | null>(
-  null,
-);
-
-export function useCivisCmsEdit() {
-  return useContext(CivisCmsEditContext);
 }
 
 function CivisCmsEditInner({ children }: { children: ReactNode }) {

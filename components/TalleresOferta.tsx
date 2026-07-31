@@ -16,7 +16,7 @@ import { ProximasActividades } from "@/components/ProximasActividades";
 
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
 
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 
 import { useCivisTalleresPageCopy, useMergedOferta } from "@/lib/cms/hooks";
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CivisEntrenadoresList } from "@/components/CivisEntrenadoresList";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { useCivisHomePageCopy, useCmsHydrated, useMergedEntrenadores } from "@/lib/cms/hooks";
 import { CIVIS_ENTRENADORES_DESTACADOS, CIVIS_NUESTRO_EQUIPO_PATH } from "@/lib/civis-content";
 

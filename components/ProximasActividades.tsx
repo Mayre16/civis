@@ -16,7 +16,7 @@ import { OfertaFormativaItem } from "@/components/OfertaFormativaItem";
 
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
 
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 
 import {
 

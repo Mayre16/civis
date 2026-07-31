@@ -3,7 +3,7 @@
 import { CivisMediaImage } from "@/components/cms/CivisMediaImage";
 import { Plus } from "lucide-react";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import {
   useCivisHomePageCopy,
   useMergedTalleresRealizados,

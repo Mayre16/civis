@@ -56,7 +56,7 @@ import {
 import type { HeroImage } from "@/lib/hero-images";
 
 import { isCmsEnabled, useCmsDocument } from "@/lib/cms/provider";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { useCmsHydrated } from "@/lib/cms/hydration";
 
 export { useCmsHydrated } from "@/lib/cms/hydration";

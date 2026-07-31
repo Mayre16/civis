@@ -30,7 +30,7 @@ import { CivisClientesLogoGrid } from "@/components/CivisClientesLogoGrid";
 import { CivisQuienesTabsBar } from "@/components/CivisQuienesTabsBar";
 import { CivisMediaImage } from "@/components/cms/CivisMediaImage";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { useCivisHomePageCopy,
   useCivisQuienesCivisContent,
   useCivisQuienesNaContent,

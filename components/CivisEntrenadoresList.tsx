@@ -7,7 +7,7 @@ import { Award } from "lucide-react";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
 import { CivisMediaImage } from "@/components/cms/CivisMediaImage";
 
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 
 import { entrenadorSlug } from "@/lib/cms/civis-display";
 

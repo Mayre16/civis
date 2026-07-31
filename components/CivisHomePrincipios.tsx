@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CivisPrincipiosSection } from "@/components/CivisPrincipiosSection";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { useCivisHomePrincipiosContent } from "@/lib/cms/hooks";
 
 export function CivisHomePrincipios() {

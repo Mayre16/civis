@@ -1,0 +1,138 @@
+[
+  {
+    "id": "agora",
+    "name": "Ágora",
+    "sede": "Naco",
+    "city": "Santo Domingo",
+    "summary": "Sala principal para asambleas, charlas y formaciones amplias. Buena acústica y ambiente sobrio al estilo de nuestra escuela.",
+    "featuredLayout": "butacas",
+    "capacities": {
+      "butacas": 30,
+      "mesas": 25,
+      "herradura": 15
+    },
+    "image": {
+      "src": "/img/salones/agora-butacas.webp",
+      "alt": "Salón Ágora en Naco con butacas en filas, decoración clásica sobria"
+    }
+  },
+  {
+    "id": "hipatia",
+    "name": "Hipatia",
+    "sede": "Naco",
+    "city": "Santo Domingo",
+    "summary": "Sala de estudio y seminarios, ideal para cursos con trabajo escrito y dinámicas en mesa.",
+    "featuredLayout": "mesas",
+    "capacities": {
+      "butacas": 20,
+      "mesas": 15,
+      "herradura": 13
+    },
+    "image": {
+      "src": "/img/salones/hipatia-mesas.webp",
+      "alt": "Salón Hipatia en Naco con mesas tipo escuela y estantería filosófica"
+    }
+  },
+  {
+    "id": "aristoteles",
+    "name": "Aristóteles",
+    "sede": "Naco",
+    "city": "Santo Domingo",
+    "summary": "Espacio versátil para talleres de diálogo, liderazgo y trabajo en equipo con disposición herradura.",
+    "featuredLayout": "herradura",
+    "capacities": {
+      "butacas": 25,
+      "mesas": 12,
+      "herradura": 15
+    },
+    "image": {
+      "src": "/img/salones/aristoteles-herradura.webp",
+      "alt": "Salón Aristóteles en Naco en disposición herradura para facilitación grupal"
+    }
+  },
+  {
+    "id": "socrates",
+    "name": "Sócrates",
+    "sede": "Los Prados",
+    "city": "Santo Domingo",
+    "summary": "Aula íntima para cursos y talleres de mediano tamaño en nuestra sede de Los Prados.",
+    "featuredLayout": "mesas",
+    "capacities": {
+      "butacas": 35,
+      "mesas": 25,
+      "herradura": 22
+    },
+    "image": {
+      "src": "/img/salones/socrates-mesas.webp",
+      "alt": "Salón Sócrates en Los Prados con mesas tipo escuela"
+    }
+  },
+  {
+    "id": "platon",
+    "name": "Platón",
+    "sede": "Los Prados",
+    "city": "Santo Domingo",
+    "summary": "Salón amplio con butacas para charlas, proyecciones y encuentros formativos.",
+    "featuredLayout": "butacas",
+    "capacities": {
+      "butacas": 50,
+      "mesas": 32,
+      "herradura": 28
+    },
+    "image": {
+      "src": "/img/salones/platon-butacas.webp",
+      "alt": "Salón Platón en Los Prados con butacas en filas y escenario"
+    }
+  },
+  {
+    "id": "apolo",
+    "name": "Apolo",
+    "sede": "Santiago",
+    "city": "Santiago",
+    "summary": "Salón para charlas, proyecciones y encuentros formativos en nuestra sede de Santiago de los Caballeros.",
+    "featuredLayout": "butacas",
+    "capacities": {
+      "butacas": 25,
+      "mesas": 25,
+      "herradura": 25
+    },
+    "image": {
+      "src": "/img/salones/apolo-butacas.webp",
+      "alt": "Salón Apolo en Sede Santiago — espacio para charlas y formación"
+    }
+  },
+  {
+    "id": "atenea",
+    "name": "Atenea",
+    "sede": "Santiago",
+    "city": "Santiago",
+    "summary": "Aula versátil para cursos y talleres con trabajo en mesa en Santiago.",
+    "featuredLayout": "mesas",
+    "capacities": {
+      "butacas": 25,
+      "mesas": 25,
+      "herradura": 25
+    },
+    "image": {
+      "src": "/img/salones/hipatia-mesas.webp",
+      "alt": "Salón Atenea en Sede Santiago con mesas tipo escuela"
+    }
+  },
+  {
+    "id": "olimpia",
+    "name": "Olimpia",
+    "sede": "Santiago",
+    "city": "Santiago",
+    "summary": "Espacio para dinámicas grupales, diálogo y facilitación en disposición herradura.",
+    "featuredLayout": "herradura",
+    "capacities": {
+      "butacas": 25,
+      "mesas": 25,
+      "herradura": 25
+    },
+    "image": {
+      "src": "/img/salones/aristoteles-herradura.webp",
+      "alt": "Salón Olimpia en Sede Santiago en disposición herradura"
+    }
+  }
+]

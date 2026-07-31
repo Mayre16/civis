@@ -2,7 +2,7 @@
 
 import { CivisClientesLogoGrid } from "@/components/CivisClientesLogoGrid";
 import { CivisEditPencil } from "@/components/cms/CmsEditFields";
-import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditContext";
+import { useCivisCmsEdit } from "@/components/cms/CivisCmsEditHooks";
 import { useCivisQuienesPageCopy, useMergedClientes } from "@/lib/cms/hooks";
 
 /** Logos de clientes y aliados — home, entre actividades recientes y salones. */
