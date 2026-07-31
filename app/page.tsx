@@ -7,10 +7,16 @@ import { CivisClientesHomeSection } from "@/components/CivisClientesHomeSection"
 import { CivisEntrenadoresHome } from "@/components/CivisEntrenadoresHome";
 import { CivisSalonesHomeSection } from "@/components/CivisSalonesHomeSection";
 import { CivisPageShell } from "@/components/cms/CivisPageShell";
+import { CIVIS_HERO_IMAGES } from "@/lib/hero-images";
 
 export default function HomePage() {
+  const lcpSrc = CIVIS_HERO_IMAGES[0]?.src;
+
   return (
     <CivisPageShell pageId="home">
+      {lcpSrc ? (
+        <link rel="preload" as="image" href={lcpSrc} fetchPriority="high" />
+      ) : null}
       <CivisHeroCms
         title="Civis Consulting"
         lede="Talleres y formación para empresas, equipos y líderes: comunicación, convivencia y habilidades para el entorno laboral."

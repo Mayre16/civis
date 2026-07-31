@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CarouselDotButton } from "@/components/CarouselDotButton";
 import { resolveCmsMediaUrl } from "@/lib/cms/api-client";
 import { PageMediaVideo } from "@/components/cms/PageMediaVideo";
 import type {
@@ -246,17 +247,13 @@ function GalleryCarousel({
 
           <div className="mt-4 flex items-center justify-center gap-2">
             {items.map((item, i) => (
-              <button
+              <CarouselDotButton
                 key={item.id}
-                type="button"
+                size="sm"
+                active={i === index}
                 onClick={() => onIndexChange(i)}
-                className={`h-2 rounded-full transition-all ${
-                  i === index
-                    ? "w-7 bg-na-civis"
-                    : "w-2 bg-na-civis/25 hover:bg-na-civis/45"
-                }`}
-                aria-label={`Ver foto ${i + 1}`}
-                aria-current={i === index ? "true" : undefined}
+                colorClassName="bg-na-civis"
+                label={`Ver foto ${i + 1}`}
               />
             ))}
           </div>

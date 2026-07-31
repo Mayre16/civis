@@ -44,26 +44,32 @@ export function HeroCarousel({
       className={`pointer-events-none overflow-hidden ${className}`}
       aria-hidden
     >
-      {visibleImages.map((img, i) => (
-        <div
-          key={`${img.src}-${i}`}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-          style={{ opacity: i === index ? 1 : 0 }}
-        >
-          <Image
-            src={img.src}
-            alt=""
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-            style={{
-              objectPosition: img.objectPosition ?? defaultObjectPosition,
-            }}
-            priority={priorityFirst && i === 0}
-            unoptimized
-          />
-        </div>
-      ))}
+      {visibleImages.map((img, i) => {
+        const isLcp = priorityFirst && i === 0;
+        return (
+          <div
+            key={`${img.src}-${i}`}
+            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            style={{ opacity: i === index ? 1 : 0 }}
+          >
+            <Image
+              src={img.src}
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              style={{
+                objectPosition: img.objectPosition ?? defaultObjectPosition,
+              }}
+              priority={isLcp}
+              fetchPriority={isLcp ? "high" : "auto"}
+              decoding={isLcp ? "sync" : "async"}
+              loading={isLcp ? "eager" : "lazy"}
+              unoptimized
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

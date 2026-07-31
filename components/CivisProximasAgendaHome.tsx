@@ -24,6 +24,7 @@ import {
   useMergedProximasActividades,
 } from "@/lib/cms/hooks";
 import type { ProximaActividad } from "@/lib/talleres-actividades";
+import { CarouselDotButton } from "@/components/CarouselDotButton";
 import { cn } from "@/lib/utils/cn";
 
 function AgendaCarouselMeta({ act }: { act: ProximaActividad }) {
@@ -223,22 +224,16 @@ export function CivisProximasAgendaHome() {
               <>
                 <div className="mt-5 flex items-center justify-center gap-2">
                   {items.map((act, i) => (
-                    <button
+                    <CarouselDotButton
                       key={act.id}
-                      type="button"
+                      active={i === index}
                       onClick={() => setIndex(i)}
-                      className={cn(
-                        "h-2.5 rounded-full transition-all",
-                        i === index
-                          ? "w-8 bg-na-civis"
-                          : "w-2.5 bg-na-civis/25 hover:bg-na-civis/45",
-                      )}
-                      aria-label={
+                      colorClassName="bg-na-civis"
+                      label={
                         act.date
                           ? `Ver: ${act.title}, ${act.date}`
                           : `Ver: ${act.title}`
                       }
-                      aria-current={i === index ? "true" : undefined}
                     />
                   ))}
                 </div>

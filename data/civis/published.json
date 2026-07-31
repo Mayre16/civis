@@ -1,0 +1,566 @@
+{
+  "version": 1,
+  "site": "civis",
+  "updatedAt": "2026-06-14T19:34:40.356Z",
+  "sections": {
+    "homeHero": {
+      "h1": "Civis Consulting",
+      "h2": "Talleres para empresas y equipos",
+      "lede": "Comunicación, convivencia y liderazgo al servicio de las organizaciones."
+    },
+    "agenda": [],
+    "civisHomePage": {
+      "oferta": {
+        "eyebrow": "Oferta formativa",
+        "title": "Nuestra oferta formativa",
+        "lede": "Cuatro líneas de talleres presenciales para empresas e instituciones. Cada propuesta se adapta in company a su organización."
+      },
+      "actividades": {
+        "eyebrow": "Experiencia",
+        "title": "Nuestras actividades recientes",
+        "lede": ""
+      },
+      "entrenadores": {
+        "eyebrow": "Equipo",
+        "title": "Entrenadores",
+        "lede": "Facilitadores con experiencia en liderazgo, convivencia y talleres corporativos para empresas e instituciones."
+      },
+      "principios": {
+        "eyebrow": "Civis",
+        "title": "Nuestros principios",
+        "items": [
+          {
+            "title": "Persona al centro",
+            "text": "La formación parte de quienes integran la organización, no solo de procesos o manuales."
+          },
+          {
+            "title": "Diálogo y escucha",
+            "text": "El aprendizaje surge del intercambio respetuoso, la pregunta y la reflexión compartida."
+          },
+          {
+            "title": "Ética y coherencia",
+            "text": "Valores aplicados a decisiones cotidianas, relaciones internas y responsabilidad social."
+          }
+        ],
+        "footerLede": "Conoce nuestra propuesta, metodología, clientes y el equipo que facilita los talleres.",
+        "footerLinkLabel": "Ver quiénes somos",
+        "footerLinkHref": "/quienes-somos"
+      }
+    },
+    "civisTalleresPage": {
+      "oferta": {
+        "eyebrow": "Oferta formativa",
+        "title": "Cuatro líneas de talleres para empresas y equipos",
+        "lede": "Talleres presenciales con duración y cupo de referencia. La propuesta final se adapta a los objetivos de su organización."
+      },
+      "agenda": {
+        "eyebrow": "Agenda",
+        "title": "Próximas actividades",
+        "lede": "Talleres en planificación o abiertos a propuestas in company. Pulse una actividad para ver el detalle e inscribirse."
+      }
+    },
+    "civisQuienesPage": {
+      "equipo": {
+        "eyebrow": "Equipo",
+        "title": "Entrenadores y facilitadores",
+        "lede": "Profesores de filosofía y facilitadores con experiencia en liderazgo, convivencia y talleres corporativos."
+      },
+      "clientes": {
+        "eyebrow": "Confianza",
+        "title": "Quienes han confiado en nosotros",
+        "lede": "Hemos acompañado a empresas, instituciones y organizaciones que buscan fortalecer a sus equipos con formación en convivencia, liderazgo y ética aplicada."
+      },
+      "civis": {
+        "intro": "Civis es una propuesta de Nueva Acrópolis para empresas e instituciones. Lleva al entorno organizacional la tradición de cultura, filosofía y valores permanentes con la que la Escuela trabaja desde hace más de 65 años: talleres presenciales sobre convivencia, ética y responsabilidad, donde el liderazgo se comprende como parte de la cultura y de una sociedad más consciente — no como técnica aislada.",
+        "propositoEyebrow": "Nuestro propósito",
+        "proposito": "Acercar cultura, valores y formación del ser de Nueva Acrópolis al mundo empresarial e institucional, mediante talleres de convivencia, ética y responsabilidad compartida.",
+        "objetivosIntro": "De este propósito surgen",
+        "objetivos": [
+          {
+            "title": "Fortalecer la cultura organizacional",
+            "text": "Crear espacios de reflexión y práctica donde convivencia, diálogo y valores orienten el trabajo cotidiano de equipos e instituciones."
+          },
+          {
+            "title": "Ética y valores en acción",
+            "text": "Traducir el ideal acrópoleo de una sociedad más consciente al lenguaje y las decisiones del entorno laboral."
+          },
+          {
+            "title": "Personas al servicio del bien común",
+            "text": "Formar criterio compartido, confianza interna y coherencia entre lo que se declara y lo que se hace — integrando liderazgo y responsabilidad como parte de la cultura."
+          }
+        ],
+        "sideImage": {
+          "src": "/img/quienes-somos/piramide-ciudadania.webp",
+          "alt": "Grupo central con columna clásica transparente al fondo",
+          "objectPosition": "50% 35%",
+          "caption": "Cultura, valores y responsabilidad compartida para equipos e instituciones."
+        },
+        "metodologiaEyebrow": "Metodología",
+        "metodologiaTitle": "Cómo trabajamos en los talleres",
+        "metodologia": [
+          {
+            "title": "Aprendizaje experiencial",
+            "text": "Dinámicas, simulaciones y casos prácticos tomados del día a día laboral para que el contenido se viva, no solo se escuche."
+          },
+          {
+            "title": "Diálogo y reflexión guiada",
+            "text": "Preguntas y conversaciones estructuradas que conectan cultura, convivencia y valores con situaciones reales del equipo."
+          },
+          {
+            "title": "Trabajo colaborativo",
+            "text": "Ejercicios en grupo para practicar escucha, acuerdos y toma de decisiones antes de llevarlos al puesto de trabajo."
+          },
+          {
+            "title": "Filosofía, cultura y valores aplicados",
+            "text": "Marcos de ética, propósito y responsabilidad inspirados en la tradición acrópolea, conectados con situaciones reales del equipo."
+          },
+          {
+            "title": "Propuesta in company",
+            "text": "Duración, temas y formato se adaptan a la cultura, el tamaño y los objetivos de cada organización."
+          }
+        ]
+      },
+      "nuevaAcropolis": {
+        "title": "Qué es Nueva Acrópolis",
+        "intro": [
+          "Nueva Acrópolis es una Escuela de Filosofía que promueve la cultura y practica el voluntariado. Propone un ideal de valores permanentes para contribuir a la evolución individual y colectiva.",
+          "Desde hace más de 65 años, en más de 50 países, los programas de la Escuela de Filosofía han transformado la vida de miles de personas en todo el mundo.",
+          "Civis es la propuesta de Nueva Acrópolis para el mundo empresarial e institucional: la misma raíz de cultura, valores y formación de personas que define a la Escuela."
+        ],
+        "heroImage": {
+          "src": "/img/home/grecia.webp",
+          "alt": "Visitante contemplando el Partenón en la Acrópolis de Atenas",
+          "objectPosition": "50% 50%"
+        },
+        "principios": [
+          {
+            "title": "Fraternidad",
+            "text": "Promover un ideal de fraternidad basado en el respeto a la dignidad humana, más allá de las diferencias culturales, sociales o religiosas."
+          },
+          {
+            "title": "Conocimiento",
+            "text": "Fomentar el amor a la sabiduría a través del estudio comparado de filosofías, religiones, ciencias y artes."
+          },
+          {
+            "title": "Desarrollo",
+            "text": "Desarrollar lo mejor del ser humano, promoviendo su realización como individuo y como miembro activo de la sociedad."
+          }
+        ],
+        "ctaIntro": "Conoce nuestra historia, actividades y sedes en República Dominicana.",
+        "ctaLabel": "Visitar acropolis.org.do",
+        "ctaUrl": "http://localhost:3100"
+      }
+    },
+    "civisOferta": [
+      {
+        "id": "etica",
+        "title": "Ética y responsabilidad",
+        "intro": "Taller presencial para equipos directivos y mandos medios que buscan criterios compartidos para decidir con integridad, transparencia y coherencia entre valores declarados y acciones cotidianas.",
+        "topics": [
+          "Principios para decisiones cotidianas — marcos de referencia para actuar con criterio en el entorno laboral.",
+          "Integridad y transparencia — confianza interna cuando lo que se declara coincide con lo que se hace.",
+          "Responsabilidad compartida — de la norma escrita a la práctica colectiva del equipo.",
+          "Diálogo y reflexión guiada — espacios para alinear valores personales y cultura organizacional.",
+          "Metodología vivencial — dinámicas, casos reales y ejercicios aplicados al contexto de la empresa.",
+          "Propuesta in company — duración, temas y formato adaptables a su organización."
+        ],
+        "duration": "4 horas",
+        "durationLabel": "4 horas (media jornada)",
+        "durationHours": 4,
+        "format": "Presencial",
+        "maxParticipants": 25,
+        "image": {
+          "src": "/img/hero/taller-barna.webp",
+          "alt": "Facilitador en taller de ética y liderazgo ante un grupo de empresarios",
+          "objectPosition": "50% 28%"
+        }
+      },
+      {
+        "id": "convivencia",
+        "title": "Personas y convivencia",
+        "intro": "Jornada extendida para equipos que necesitan mejorar comunicación, escucha activa y clima laboral en entornos exigentes, con herramientas prácticas para la convivencia diaria.",
+        "topics": [
+          "Escucha activa — escuchar para comprender, no solo para responder.",
+          "Comunicación en entornos exigentes — mensajes claros bajo presión y con diversidad de estilos.",
+          "Respeto y convivencia — acuerdos de convivencia y límites sanos en el trabajo.",
+          "Trabajo colaborativo — ejercicios en grupo para practicar antes de llevarlos al puesto.",
+          "Metodología vivencial — role-play, casos del día a día y reflexión compartida.",
+          "Propuesta in company — contenidos y dinámicas ajustados al tamaño y la cultura del equipo."
+        ],
+        "duration": "6 horas",
+        "durationLabel": "6 horas (jornada extendida)",
+        "durationHours": 6,
+        "format": "Presencial",
+        "maxParticipants": 25,
+        "image": {
+          "src": "/img/hero/oratoria.webp",
+          "alt": "Sesión de comunicación y convivencia con participantes en un taller",
+          "objectPosition": "50% 25%"
+        }
+      },
+      {
+        "id": "conflicto",
+        "title": "Conflicto y liderazgo",
+        "intro": "Jornada completa para mandos medios y alta dirección que enfrentan tensiones recurrentes y necesitan herramientas concretas para mediar, negociar acuerdos y liderar con criterio.",
+        "topics": [
+          "Conflicto como oportunidad — leer tensiones sin evitarlas ni escalarlas innecesariamente.",
+          "Herramientas de mediación — pasos prácticos para facilitar acuerdos entre partes.",
+          "Negociación con criterio — intereses, posiciones y soluciones viables para el equipo.",
+          "Liderazgo con ejemplo — coherencia entre lo que se pide y lo que se modela.",
+          "Metodología vivencial — simulaciones y casos reales del ámbito corporativo.",
+          "Propuesta in company — profundidad y casos adaptados a su sector y sus retos."
+        ],
+        "duration": "8 horas",
+        "durationLabel": "8 horas (jornada completa)",
+        "durationHours": 8,
+        "format": "Presencial",
+        "maxParticipants": 20,
+        "image": {
+          "src": "/img/hero/taller-barna-eva.webp",
+          "alt": "Eva Rodríguez facilitando un taller sobre conflictos y convivencia en Barna Management School",
+          "objectPosition": "68% 32%"
+        }
+      },
+      {
+        "id": "claridad-mental",
+        "title": "Claridad mental y equilibrio",
+        "intro": "Taller presencial facilitado por Daniel Salinas que integra filosofía comparada, respiración consciente y prácticas gimnástico-terapéuticas de origen chino (Chi Kung) para cultivar serenidad, atención y equilibrio interior — aplicables al entorno laboral y a la vida cotidiana.",
+        "topics": [
+          "Filosofía práctica — corrientes de Oriente y Occidente aplicadas a la claridad mental y el sentido.",
+          "Chi Kung y respiración — movimientos suaves y respiración consciente para equilibrio cuerpo-mente.",
+          "Atención y serenidad — herramientas para reducir dispersión y recuperar foco en entornos exigentes.",
+          "Disciplinas tradicionales — enfoque integral desde la tradición acrópolea y las artes marciales orientales.",
+          "Metodología vivencial — prácticas guiadas en salón, adaptables al tamaño y ritmo del grupo.",
+          "Propuesta in company — duración y profundidad ajustables para empresas, equipos o instituciones."
+        ],
+        "duration": "4 horas",
+        "durationLabel": "4 horas (media jornada)",
+        "durationHours": 4,
+        "format": "Presencial",
+        "maxParticipants": 25,
+        "image": {
+          "src": "/img/talleres/claridad-mental-equilibrio.webp",
+          "alt": "Grupo visto de espaldas practicando movimientos de Chi Kung en salón con espejo y piso de madera",
+          "objectPosition": "50% 18%"
+        }
+      }
+    ],
+    "civisEntrenadores": [
+      {
+        "id": "gabriel-paredes",
+        "name": "Gabriel Paredes",
+        "role": "Director Nacional · Facilitador Civis",
+        "bio": "Profesor de Filosofía, psicólogo clínico y máster en gestión de riesgos de desastres. Facilita talleres de liderazgo, ética y convivencia para equipos directivos e instituciones.",
+        "certifications": [
+          "Profesor de Filosofía",
+          "Psicólogo Clínico",
+          "Experto en Filosofía de Oriente y Occidente",
+          "Máster en Gestión de Riesgos de Desastres",
+          "Facilitador de programas corporativos Civis"
+        ],
+        "photo": "/img/quienes-somos/gabriel-paredes.webp",
+        "photoObjectPosition": "50% 28%",
+        "initials": "GP",
+        "featured": true
+      },
+      {
+        "id": "eva-rodriguez",
+        "name": "Eva Rodríguez",
+        "role": "Profesora de Filosofía · Facilitadora Civis",
+        "bio": "Profesora de Filosofía y abogada experta en resolución de conflictos. Facilita talleres de convivencia, comunicación y manejo de conflictos para equipos directivos e instituciones, incluyendo programas con Barna Management School.",
+        "certifications": [
+          "Profesora de Filosofía",
+          "Abogada experta en resolución de conflictos",
+          "Facilitación de talleres corporativos",
+          "Comunicación y convivencia organizacional"
+        ],
+        "photo": "/img/quienes-somos/eva-rodriguez.webp",
+        "photoObjectPosition": "72% 28%",
+        "initials": "ER",
+        "featured": true
+      },
+      {
+        "id": "daniel-salinas",
+        "name": "Daniel Salinas",
+        "role": "Profesor de Filosofía Astrológica ·  Artes Marciales",
+        "bio": "Profesor de Filosofía con décadas de experiencia docente en Nueva Acrópolis. Facilita talleres de claridad mental y equilibrio para equipos empresariales, integrando reflexión filosófica, artes marciales internas y herramientas de desarrollo personal aplicables al entorno laboral.",
+        "certifications": [
+          "Profesor de Filosofía",
+          "Experto en Filosofía de Oriente y Occidente",
+          "Experto en Astrología Filosófica",
+          "Profesor en Artes Marciales Orientales — Chi Kung y Tai Chi Chuan",
+          "Instructor-capacitador en desarrollo empresarial"
+        ],
+        "photo": "/img/quienes-somos/daniel-salinas.webp",
+        "photoObjectPosition": "50% 22%",
+        "initials": "DS"
+      },
+      {
+        "id": "sally-polanco",
+        "name": "Sally Polanco",
+        "role": "Facilitadora Civis",
+        "bio": "Facilitadora de talleres y charlas con enfoque en cultura, simbolismo y reflexión aplicada al desarrollo personal y organizacional.",
+        "certifications": [
+          "Facilitación de programas formativos Civis",
+          "Comunicación y exposición en entornos institucionales"
+        ],
+        "initials": "SP"
+      },
+      {
+        "id": "karla-mota",
+        "name": "Karla Mota",
+        "role": "Facilitadora Civis",
+        "bio": "Acompaña procesos de formación en convivencia, ética y trabajo en equipo para equipos de empresas e instituciones.",
+        "certifications": [
+          "Facilitación de talleres corporativos",
+          "Dinámicas grupales y convivencia organizacional"
+        ],
+        "initials": "KM"
+      },
+      {
+        "id": "rosa-urania",
+        "name": "Rosa Urania",
+        "role": "Facilitadora Civis",
+        "bio": "Colabora en la facilitación de talleres de liderazgo, diálogo y valores en el ámbito empresarial e institucional.",
+        "certifications": [
+          "Facilitación de programas Civis",
+          "Formación en convivencia y responsabilidad compartida"
+        ],
+        "initials": "RU",
+        "photo": "/uploads/civis/1781380252140-948ekb.png"
+      }
+    ],
+    "civisTalleresRealizados": [
+      {
+        "id": "code-0",
+        "title": "Ética y liderazgo en el entorno corporativo",
+        "client": "Barna Management School",
+        "date": "2025",
+        "place": "Santo Domingo",
+        "lineaId": "etica",
+        "image": {
+          "src": "/img/actividades/etica-liderazgo-corporativo.webp",
+          "alt": "Taller de ética y liderazgo con directivos y empresarios en sala de formación",
+          "objectPosition": "50% 35%"
+        }
+      },
+      {
+        "id": "code-1",
+        "title": "Integridad y responsabilidad en equipos directivos",
+        "client": "Empresa del sector privado",
+        "date": "2024",
+        "place": "República Dominicana",
+        "lineaId": "etica",
+        "image": {
+          "src": "/img/actividades/integridad-equipos-directivos.webp",
+          "alt": "Directivos en sesión de integridad y responsabilidad corporativa",
+          "objectPosition": "50% 30%"
+        }
+      },
+      {
+        "id": "code-2",
+        "title": "Comunicación y convivencia en equipos",
+        "client": "Institución pública",
+        "date": "2024",
+        "place": "Santo Domingo",
+        "lineaId": "convivencia",
+        "image": {
+          "src": "/img/actividades/comunicacion-convivencia-equipos.webp",
+          "alt": "Taller de comunicación y convivencia con participantes en ejercicio de escucha activa",
+          "objectPosition": "50% 28%"
+        }
+      },
+      {
+        "id": "code-3",
+        "title": "Personas y clima laboral",
+        "client": "Organización gremial",
+        "date": "2024",
+        "lineaId": "convivencia",
+        "image": {
+          "src": "/img/actividades/personas-clima-laboral.webp",
+          "alt": "Dinámica grupal sobre convivencia y clima laboral en taller corporativo",
+          "objectPosition": "50% 32%"
+        }
+      },
+      {
+        "id": "code-4",
+        "title": "Los conflictos como retos y oportunidades",
+        "client": "Barna Management School",
+        "date": "2025",
+        "place": "Santo Domingo",
+        "lineaId": "conflicto",
+        "image": {
+          "src": "/img/actividades/conflictos-retos-oportunidades.webp",
+          "alt": "Charla sobre conflictos como retos y oportunidades ante grupo de profesionales",
+          "objectPosition": "55% 30%"
+        }
+      },
+      {
+        "id": "code-5",
+        "title": "Conflicto y liderazgo con criterio",
+        "client": "Empresa privada · mandos medios",
+        "date": "2024",
+        "lineaId": "conflicto",
+        "image": {
+          "src": "/img/actividades/conflicto-liderazgo-criterio.webp",
+          "alt": "Mandos medios en ejercicio de mediación y liderazgo durante taller presencial",
+          "objectPosition": "50% 28%"
+        }
+      },
+      {
+        "id": "real-mqcqpqah",
+        "title": "Nuevo taller realizado",
+        "client": "Cliente",
+        "date": "2026",
+        "lineaId": "etica",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
+      }
+    ],
+    "civisProximasActividades": [
+      {
+        "id": "etica-in-company",
+        "title": "Ética y responsabilidad in company",
+        "date": "Por confirmar — 2026",
+        "format": "Taller corporativo · 4 h",
+        "excerpt": "Sesión para equipos directivos sobre integridad, transparencia y criterios compartidos de decisión.",
+        "lineaId": "etica",
+        "image": {
+          "src": "/img/hero/taller-barna.webp",
+          "alt": "Taller de ética y responsabilidad con directivos en sala de formación",
+          "objectPosition": "50% 28%"
+        },
+        "open": true
+      },
+      {
+        "id": "convivencia-equipos",
+        "title": "Personas y convivencia en el trabajo",
+        "date": "Por confirmar — 2026",
+        "format": "Taller corporativo · 6 h",
+        "excerpt": "Comunicación, escucha activa y herramientas para mejorar el clima laboral en entornos exigentes.",
+        "lineaId": "convivencia",
+        "image": {
+          "src": "/img/hero/oratoria.webp",
+          "alt": "Taller de comunicación y convivencia con participantes en un entorno profesional",
+          "objectPosition": "50% 25%"
+        },
+        "open": true
+      },
+      {
+        "id": "conflicto-liderazgo",
+        "title": "Conflicto y liderazgo con criterio",
+        "date": "Por confirmar — 2026",
+        "format": "Taller corporativo · jornada completa",
+        "excerpt": "Herramientas prácticas para mediar tensiones y negociar acuerdos en equipos de mando medio y alta dirección.",
+        "lineaId": "conflicto",
+        "image": {
+          "src": "/img/hero/taller-barna-eva.webp",
+          "alt": "Eva Rodríguez facilitando un taller sobre conflictos y convivencia en Barna Management School",
+          "objectPosition": "68% 32%"
+        },
+        "open": true
+      },
+      {
+        "id": "claridad-mental-in-company",
+        "title": "Claridad mental y equilibrio",
+        "date": "Por confirmar — 2026",
+        "format": "Taller corporativo · 4 h",
+        "excerpt": "Filosofía comparada, Chi Kung y respiración consciente para serenidad y foco. Facilitado por Daniel Salinas — in company según calendario.",
+        "lineaId": "claridad-mental",
+        "image": {
+          "src": "/img/talleres/claridad-mental-equilibrio.webp",
+          "alt": "Grupo visto de espaldas practicando movimientos de Chi Kung en salón con espejo y piso de madera",
+          "objectPosition": "50% 18%"
+        },
+        "open": true
+      }
+    ],
+    "civisClientes": [
+      {
+        "id": "barna",
+        "name": "Barna Management School",
+        "logo": "/brand/clientes/barna.webp",
+        "logoAlt": "Logo de Barna Management School",
+        "logoOnDark": true
+      },
+      {
+        "id": "bonanza",
+        "name": "Bonanza Dominicana",
+        "logo": "/brand/clientes/bonanza.svg",
+        "logoAlt": "Logo de Bonanza Dominicana"
+      },
+      {
+        "id": "cruz-roja",
+        "name": "Cruz Roja Dominicana",
+        "logo": "/brand/clientes/cruz-roja.webp",
+        "logoAlt": "Logo de la Cruz Roja Dominicana"
+      },
+      {
+        "id": "policia-nacional",
+        "name": "Policía Nacional",
+        "logo": "/brand/clientes/policia-nacional.webp",
+        "logoAlt": "Logo de la Policía Nacional de la República Dominicana"
+      },
+      {
+        "id": "coe",
+        "name": "COE",
+        "logo": "/brand/clientes/coe.webp",
+        "logoAlt": "Logo del Centro de Operaciones de Emergencias"
+      },
+      {
+        "id": "pucmm",
+        "name": "PUCMM",
+        "logo": "/brand/clientes/pucmm.webp",
+        "logoAlt": "Logo de la Pontificia Universidad Católica Madre y Maestra"
+      },
+      {
+        "id": "indomet",
+        "name": "INDOMET",
+        "logo": "/brand/clientes/indomet.webp",
+        "logoAlt": "Logo del Instituto Dominicano de Meteorología"
+      },
+      {
+        "id": "cliente-mqcrpbvu",
+        "name": "ADESA SRL",
+        "logo": "/uploads/civis/1781380105777-8tb1wm.png",
+        "logoAlt": "Logo del cliente",
+        "logoOnDark": false
+      }
+    ],
+    "civisSalonesPage": {
+      "eyebrow": "Espacios",
+      "title": "¿Necesitas un espacio para tus talleres o reuniones?",
+      "lede": "Además de impartir formación in company, ponemos a disposición salones sobrios y elegantes en nuestras sedes de Santo Domingo — ideales para talleres, cursos, charlas y reuniones de equipo que usted organice.",
+      "catalogTitle": "Catálogo de salones",
+      "catalogIntro": "Capacidades por disposición: butacas, mesas tipo escuela o herradura."
+    },
+    "civisHeroCarousel": [
+      {
+        "id": "default-0",
+        "src": "/img/hero/taller-barna-eva.webp",
+        "alt": "Eva Rodríguez facilitando un taller sobre conflictos y convivencia en Barna Management School",
+        "objectPosition": "68% 32%"
+      },
+      {
+        "id": "default-1",
+        "src": "/img/hero/conflictos.webp",
+        "alt": "Equipo de trabajo en sesión de formación sobre manejo de conflictos",
+        "objectPosition": "48% 32%"
+      },
+      {
+        "id": "default-2",
+        "src": "/img/hero/oratoria.webp",
+        "alt": "Taller de comunicación y oratoria con participantes en un entorno profesional",
+        "objectPosition": "50% 25%"
+      },
+      {
+        "id": "default-3",
+        "src": "/img/hero/taller-equipos.webp",
+        "alt": "Dinámica grupal de trabajo en equipo en un taller para el sector privado",
+        "objectPosition": "50% 30%"
+      }
+    ]
+  }
+}
