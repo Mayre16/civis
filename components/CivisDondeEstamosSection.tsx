@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Clock,
   ExternalLink,
@@ -48,7 +48,12 @@ function LazyMapEmbed({ sede }: { sede: CivisSede }) {
       {ready ? (
         <iframe
           title={`Mapa — ${sede.name}`}
-          src={civisMapsEmbedUrl(sede.mapsQuery)}
+          src={civisMapsEmbedUrl(
+            sede.mapsQuery,
+            [sede.address, sede.zone, sede.city, "República Dominicana"]
+              .filter(Boolean)
+              .join(", "),
+          )}
           className="aspect-[4/3] min-h-[280px] w-full border-0 lg:min-h-[360px]"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -159,12 +164,12 @@ export function CivisDondeEstamosSection() {
         <p className="text-xs font-bold uppercase tracking-[0.32em] text-na-civisDark">
           Dónde estamos
         </p>
-        <h2
+        <h1
           id="civis-donde-title"
-          className="mt-3 text-balance text-3xl font-black text-na-ink sm:text-4xl"
+          className="mt-3 text-balance text-3xl font-black text-na-ink sm:text-4xl lg:text-5xl"
         >
           Visítanos en Naco
-        </h2>
+        </h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-na-muted sm:text-base">
           Civis Consulting está en la Sede Naco de Nueva Acrópolis: formación
           para empresas y alquiler de salones.

@@ -86,7 +86,7 @@ export function civisMapsUrl(query: string): string {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t)}`;
 }
 
-export function civisMapsEmbedUrl(query: string): string {
+export function civisMapsEmbedUrl(query: string, fallbackSearch?: string): string {
   const t = query.trim();
   const gps = parseLatLon(t);
   if (gps) {
@@ -96,6 +96,11 @@ export function civisMapsEmbedUrl(query: string): string {
   if (place) {
     const name = decodeURIComponent(place[1].replace(/\+/g, " "));
     return `https://maps.google.com/maps?q=${encodeURIComponent(name)}&hl=es&z=16&output=embed`;
+  }
+  // Enlaces cortos (maps.app.goo.gl) no se pueden embeber: usar dirección/texto.
+  if (/maps\.app\.goo\.gl|goo\.gl\/maps|share\.google\//i.test(t)) {
+    const q = (fallbackSearch ?? t).trim();
+    return `https://maps.google.com/maps?q=${encodeURIComponent(q)}&hl=es&z=16&output=embed`;
   }
   return `https://maps.google.com/maps?q=${encodeURIComponent(t)}&hl=es&z=16&output=embed`;
 }
