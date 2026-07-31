@@ -47,17 +47,27 @@ async function loadPublished() {
   }
 
   const local = PUBLISHED_CANDIDATES.find((p) => fs.existsSync(p));
-  if (!local) {
-    console.error(
-      "No se encontró published.json del sitio principal. Rutas:\n",
-      PUBLISHED_CANDIDATES.map((p) => `  - ${p}`).join("\n"),
-      "\nURL CMS:",
-      url,
-    );
-    process.exit(1);
+  if (local) {
+    console.log("Fuente sedes: archivo", local);
+    return JSON.parse(fs.readFileSync(local, "utf8"));
   }
-  console.log("Fuente sedes: archivo", local);
-  return JSON.parse(fs.readFileSync(local, "utf8"));
+
+  // CI: sin monorepo ni CMS usable — conservar el generated ya committed.
+  if (fs.existsSync(OUT)) {
+    console.warn(
+      "Sin CMS ni published.json local; se conserva",
+      path.relative(ROOT, OUT),
+    );
+    return null;
+  }
+
+  console.error(
+    "No se encontró published.json del sitio principal. Rutas:\n",
+    PUBLISHED_CANDIDATES.map((p) => `  - ${p}`).join("\n"),
+    "\nURL CMS:",
+    url,
+  );
+  process.exit(1);
 }
 
 function sedesFromDoc(doc) {
@@ -115,9 +125,18 @@ ${entries}
 }
 
 const doc = await loadPublished();
+if (!doc) {
+  console.log("OK (sin regenerar):", OUT);
+  process.exit(0);
+}
+
 const sedes = sedesFromDoc(doc);
 
 if (sedes.length === 0) {
+  if (fs.existsSync(OUT)) {
+    console.warn("CMS sin sedes; se conserva", path.relative(ROOT, OUT));
+    process.exit(0);
+  }
   console.error("No se encontraron sedes (kind: 'sede') en el sitio principal.");
   process.exit(1);
 }
