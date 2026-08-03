@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import {
   Clock,
   ExternalLink,
@@ -19,58 +19,33 @@ import {
   civisTelHref,
 } from "@/lib/civis-locations";
 
-function LazyMapEmbed({ sede }: { sede: CivisSede }) {
-  const hostRef = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    const el = hostRef.current;
-    if (!el) return;
-    setReady(false);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setReady(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "240px 0px" },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [sede.id]);
+function MapEmbed({ sede }: { sede: CivisSede }) {
+  const [loaded, setLoaded] = useState(false);
+  // Visítanos: el mapa es contenido principal — cargar al montar (sin lazy doble).
+  const src = civisMapsEmbedUrl(
+    sede.mapsEmbedQuery ?? sede.mapsQuery,
+    sede.mapsEmbedQuery ??
+      ["Calle Cub Scouts No. 6", sede.zone, sede.city, "República Dominicana"]
+        .filter(Boolean)
+        .join(", "),
+  );
 
   return (
-    <div
-      ref={hostRef}
-      className="overflow-hidden rounded-2xl border border-na-civis/15 bg-na-civis/[0.04] shadow-na-soft"
-    >
-      {ready ? (
-        <iframe
-          title={`Mapa — ${sede.name}`}
-          src={civisMapsEmbedUrl(
-            sede.mapsEmbedQuery ?? sede.mapsQuery,
-            sede.mapsEmbedQuery ??
-              [
-                "Calle Cub Scouts No. 6",
-                sede.zone,
-                sede.city,
-                "República Dominicana",
-              ]
-                .filter(Boolean)
-                .join(", "),
-          )}
-          className="aspect-[4/3] min-h-[280px] w-full border-0 lg:min-h-[360px]"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      ) : (
+    <div className="relative min-h-[240px] overflow-hidden rounded-2xl border border-na-civis/15 bg-na-civis/[0.04] shadow-na-soft sm:min-h-[280px] lg:h-full lg:min-h-0">
+      {!loaded ? (
         <div
-          className="flex aspect-[4/3] min-h-[280px] w-full items-center justify-center bg-na-civis/[0.06] lg:min-h-[360px]"
+          className="absolute inset-0 animate-pulse bg-na-civis/[0.08]"
           aria-hidden
         />
-      )}
+      ) : null}
+      <iframe
+        title={`Mapa — ${sede.name}`}
+        src={src}
+        className="absolute inset-0 h-full w-full border-0"
+        referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
+        onLoad={() => setLoaded(true)}
+      />
     </div>
   );
 }
@@ -79,7 +54,7 @@ function SedePanel({ sede }: { sede: CivisSede }) {
   const contact = CIVIS_DONDE_CONTACT;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-8">
+    <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-8">
       <div className="rounded-2xl border border-na-civis/15 bg-white p-5 shadow-na-soft sm:p-6">
         <span className="inline-flex rounded-full bg-na-civis/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-na-civisDark">
           Sede
@@ -150,7 +125,7 @@ function SedePanel({ sede }: { sede: CivisSede }) {
         </div>
       </div>
 
-      <LazyMapEmbed sede={sede} />
+      <MapEmbed sede={sede} />
     </div>
   );
 }
